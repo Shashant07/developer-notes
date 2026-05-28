@@ -1,6 +1,6 @@
-# 🚀 Prettier Setup Guide
+# 🚀 Prettier Setup for React + Vite + TypeScript
 
-Prettier automatically formats your code for consistent styling.
+Prettier automatically formats code and maintains consistent styling across the project.
 
 ---
 
@@ -14,7 +14,7 @@ npm install -D prettier
 
 # 📄 Create Prettier Config
 
-Create file:
+Create:
 
 ```txt
 .prettierrc
@@ -22,7 +22,7 @@ Create file:
 
 Add:
 
-```json id="74ix74"
+```json
 {
   "semi": true,
   "singleQuote": true,
@@ -31,22 +31,21 @@ Add:
   "printWidth": 100,
   "arrowParens": "always"
 }
-
 ```
 
 ---
 
-# 🚫 Ignore Files
+# 🚫 Create Ignore File
 
 Create:
 
-```txt id="d4chom"
+```txt
 .prettierignore
 ```
 
 Add:
 
-```txt id="59g4nk"
+```txt
 node_modules
 dist
 build
@@ -56,13 +55,14 @@ package-lock.json
 
 ---
 
-# 📜 Add Script
+# 📜 Add Format Scripts
 
 Inside `package.json`:
 
-```json id="z7z73q"
+```json
 "scripts": {
-  "format": "prettier --write ."
+  "format": "prettier --write .",
+  "format:check": "prettier --check ."
 }
 ```
 
@@ -70,15 +70,58 @@ Inside `package.json`:
 
 # ▶️ Run Formatter
 
-```bash id="fyy9ae"
+Format project:
+
+```bash
 npm run format
+```
+
+Check formatting:
+
+```bash
+npm run format:check
 ```
 
 ---
 
-# 💡 Benefits
+# 💡 Best Practices
 
-* Clean code formatting
-* Consistent styling
-* Team standardization
+* Use Prettier in all projects
+* Enable VS Code format on save
+* Keep formatting automatic
+* Avoid manual formatting
+
+---
+
+# 🧩 Recommended VS Code Extensions
+
+* Prettier - Code Formatter
+* ESLint
+
+---
+
+# ⚙️ VS Code Settings
+
+Create:
+
+```txt
+.vscode/settings.json
+```
+
+Add:
+
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+```
+
+---
+
+# ✅ Benefits
+
+* Consistent code style
+* Cleaner pull requests
 * Faster development
+* Better team collaboration
