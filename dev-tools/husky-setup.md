@@ -13,42 +13,8 @@ This setup automatically:
 # 📦 Install Required Packages
 
 ```bash
-npm install -D husky lint-staged eslint prettier
+npm install -D husky lint-staged prettier
 ````
-
----
-
-# ⚙️ Initialize ESLint
-
-```bash
-npx eslint --init
-```
-
-Recommended:
-
-* TypeScript
-* React
-* Browser
-* JSON config
-
----
-
-# 📄 Create ESLint Ignore File
-
-Create:
-
-```txt
-.eslintignore
-```
-
-Add:
-
-```txt
-node_modules
-dist
-build
-coverage
-```
 
 ---
 
@@ -58,6 +24,7 @@ Inside `package.json`:
 
 ```json
 "scripts": {
+  "prepare": "husky",
   "lint": "eslint .",
   "lint:fix": "eslint . --fix",
   "format": "prettier --write ."
@@ -74,6 +41,9 @@ Inside `package.json`:
 "lint-staged": {
   "*.{js,jsx,ts,tsx}": [
     "eslint --fix",
+    "prettier --write"
+  ],
+  "*.{json,css,scss,md}": [
     "prettier --write"
   ]
 }
@@ -151,7 +121,7 @@ project/
 ├── .husky/
 ├── .prettierrc
 ├── .prettierignore
-├── .eslintignore
+├── eslint.config.js
 ├── package.json
 └── src/
 ```
