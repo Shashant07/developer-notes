@@ -1,4 +1,3 @@
-````md
 # 🚀 Developer Notes
 
 A structured knowledge base for development notes, setup guides, fixes, reusable snippets, and step-by-step documentation.
